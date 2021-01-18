@@ -16,9 +16,9 @@ void dfs(int x, int y, int c) {
 		int nx = x + dx[i], ny = y + dy[i];
 		if (!(0 <= nx && nx < n && 0 <= ny && ny < n)) continue;
 		if (e[nx][ny] != 'X') continue;
-		if (col[nx][ny] == -1) dfs(nx, ny, 1 - c);
-		ans = max(ans, 2);
-		if (col[nx][ny] == c) ans = max(ans, 3);
+		if (col[nx][ny] == -1) dfs(nx, ny, 1 - c); // 다음 색으로 칠함
+		ans = max(ans, 2); // 두가지로 칠했으면
+		if (col[nx][ny] == c) ans = max(ans, 3); // 세가지로 
 	}
 }
 
