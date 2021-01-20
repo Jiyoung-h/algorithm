@@ -1,4 +1,4 @@
 # algorithm
 
-##study with
+## study with
 https://github.com/LeeSeoYoung012/CodingStudy
