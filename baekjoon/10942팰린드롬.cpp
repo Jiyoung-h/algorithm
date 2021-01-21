@@ -1,21 +1,39 @@
-#include <iostream>
-using namespace std;
-int pld[2001];
-int d[2001][2001];
+#include <cstdio>
+#include <cstring>
+int d[2000][2000];
+int a[2000];
+int go(int i, int j) {
+    if (i == j) {
+        return 1;
+    } else if (i+1 == j) {
+        if (a[i] == a[j]) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    if (d[i][j] != -1) {
+        return d[i][j];
+    }
+    if (a[i] != a[j]) {
+        return d[i][j] = 0;
+    } else {
+        return d[i][j] = go(i+1,j-1);
+    }
+}
 int main() {
-	int N, M;
-	scanf("%d", &N);
-	for (int i = 1; i <= N; i++) scanf("%d", &pld[i]);
-	for (int i = 1; i <= N; i++) d[i][i] = 1;
-	for (int i = 1; i < N; i++) if (pld[i] == pld[i + 1]) d[i][i + 1] = 1;
-	for (int i = 2; i < N; i++)
-		for (int j = 1; j <= N-i ; j++)
-			if (pld[j] == pld[i + j] && d[j + 1][i + j - 1]) d[j][i + j] = 1;
-	scanf("%d", &M);
-	while (M--){
-		int s, e;
-		scanf("%d %d", &s, &e);
-		printf("%d\n", d[s][e]);
-	}
-	return 0;
+    int n;
+    scanf("%d",&n);
+    for (int i=0; i<n; i++) {
+        scanf("%d",&a[i]);
+    }
+    memset(d,-1,sizeof(d));
+    int m;
+    scanf("%d",&m);
+    while (m--) {
+        int s, e;
+        scanf("%d %d",&s,&e);
+        printf("%d\n",go(s-1,e-1));
+    }
+    return 0;
 }
