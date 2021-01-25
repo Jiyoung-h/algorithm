@@ -18,7 +18,7 @@ int dp(int i, int j) {
     if (a[i] != a[j]) {
         return d[i][j] = 0;
     } else {
-        return d[i][j] = go(i+1,j-1);
+        return d[i][j] = dp(i+1,j-1);
     }
 }
 int main() {
