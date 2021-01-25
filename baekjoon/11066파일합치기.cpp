@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <iostream>
 #include <cstring>
 int a[501];
 int d[501][501];
@@ -24,15 +24,17 @@ int go(int i, int j) {  // i부터 j까지 합치기
 }
 int main() {
     int t;
-    scanf("%d",&t);
+    cin >> t;
     while (t--) {
         memset(d,-1,sizeof(d));
         int n;
-        scanf("%d",&n);
+        cin >> n;
+        int a;
         for (int i=1; i<=n; i++) {
-            scanf("%d",&a[i]);
+            cin >> a;
+            a[i] = a;
         }
-        printf("%d\n",go(1, n));
+        cout<< go(1, n) << endl;
     }
     return 0;
 }
