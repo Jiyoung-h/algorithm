@@ -1,8 +1,8 @@
-#include <cstdio>
+#include <iostream>
 #include <cstring>
 int d[2000][2000];
 int a[2000];
-int go(int i, int j) {
+int dp(int i, int j) {
     if (i == j) {
         return 1;
     } else if (i+1 == j) {
@@ -23,17 +23,19 @@ int go(int i, int j) {
 }
 int main() {
     int n;
-    scanf("%d",&n);
+    cin >> n;
+    int a;
     for (int i=0; i<n; i++) {
-        scanf("%d",&a[i]);
+        cin >> a;
+        a[i] = a;
     }
     memset(d,-1,sizeof(d));
     int m;
-    scanf("%d",&m);
+    cin >> m;
     while (m--) {
         int s, e;
-        scanf("%d %d",&s,&e);
-        printf("%d\n",go(s-1,e-1));
+        cin >> s >> e;
+        cout << go(s-1,e-1);
     }
     return 0;
 }
