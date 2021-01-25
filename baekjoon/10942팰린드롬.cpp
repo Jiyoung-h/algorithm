@@ -35,7 +35,7 @@ int main() {
     while (m--) {
         int s, e;
         cin >> s >> e;
-        cout << go(s-1,e-1);
+        cout << dp(s-1,e-1);
     }
     return 0;
 }
