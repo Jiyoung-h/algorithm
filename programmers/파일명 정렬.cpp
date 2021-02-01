@@ -7,7 +7,7 @@ bool compare(vector<string> a, vector<string> b) {
     if (a[0] < b[0]) return true; 
     else { 
         if (a[0] == b[0]) 
-            return stoi(a[1]) < stoi(b[1]); 
+            return stoi(a[1]) < stoi(b[1]);     // header가 같으면 number 비교
         else return false; 
     } 
 }
@@ -23,11 +23,11 @@ vector<string> solution(vector<string> files) {
                 tmp = tmp + files[i][j];
             }
             else if (files[i][j] >= 97 && files[i][j] <= 122) {
-                char c = files[i][j] - 32;
+                char c = files[i][j] - 32;      // 소문자는 대문자로 변환
                 tmp = tmp + c;
             }
             else {
-                v[i].push_back(tmp);
+                v[i].push_back(tmp);    // v[i][0] = header
                 break;
             }
         }
@@ -39,12 +39,12 @@ vector<string> solution(vector<string> files) {
             }
             else break;
         }
-        v[i].push_back(tmp);
-        v[i].push_back(to_string(i));
+        v[i].push_back(tmp);        // v[i][1] = number
+        v[i].push_back(to_string(i));   // v[i][2] = 파일 인덱스 저장
     }
     stable_sort(v.begin(), v.end(), compare);
     for (int i = 0; i < v.size(); i++) {
-        answer.push_back(files[stoi(v[i][2])]);
+        answer.push_back(files[stoi(v[i][2])]);     // 정렬한 파일의 인덱스를 answer에 저장
     }
     return answer;
 }
