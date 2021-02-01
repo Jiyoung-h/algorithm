@@ -28,7 +28,7 @@ int main() {
         memset(p,0,sizeof(p));
         for (int i=0; i<n; i++) {
             for (int j=0; j<n; j++) {
-                vector<int> temp;
+                vector<int> temp;   // 나무의 새로운 나이 배열
                 sort(tree[i][j].begin(), tree[i][j].end()); // 하나의 칸에 여러 개의 나무가 있다면, 나이가 어린 나무부터 양분을 먹는다.
                 int dead = 0;
                 for (int x : tree[i][j]) {
