@@ -28,10 +28,10 @@ void move() {
 	for (int i = 0; i < shark.size(); i++) {
 		if (!shark[i].empty()) {
 			for (int j = 0; j < shark[i][2]; j++) {
-				if (shark[i][0] == 1 && shark[i][3] == 1) shark[i][3] = 2;
-				if (shark[i][0] == r && shark[i][3] == 2) shark[i][3] = 1;
-				if (shark[i][1] == 1 && shark[i][3] == 4) shark[i][3] = 3;
-				if (shark[i][1] == c && shark[i][3] == 3) shark[i][3] = 4;
+				if (shark[i][0] == 1 && shark[i][3] == 1) shark[i][3] = 2;	// 행이 1인데 위방향이면 아래로
+				if (shark[i][0] == r && shark[i][3] == 2) shark[i][3] = 1;	// 행이 r인데 아래방향이면 위로
+				if (shark[i][1] == 1 && shark[i][3] == 4) shark[i][3] = 3;	// 열이 1인데 왼쪽이면 오른쪽으로
+				if (shark[i][1] == c && shark[i][3] == 3) shark[i][3] = 4;	// 열이 c인데 오른쪽이면 왼쪽으로
 				shark[i][0] = shark[i][0] + dx[shark[i][3] - 1];
 				shark[i][1] = shark[i][1] + dy[shark[i][3] - 1];
 			}
