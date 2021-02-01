@@ -55,8 +55,8 @@ int main() {
         }
         for (int i=0; i<n; i++) {
             for (int j=0; j<n; j++) {
-                for (int k=0; k<p[i][j]; k++) {
-                    tree[i][j].push_back(1); // 인접한 8개의 칸에 나이가 1인 나무가 생긴다.
+                for (int k=0; k<p[i][j]; k++) { // p : 나이가 1인 새로운 나무
+                    tree[i][j].push_back(1);
                 }
             }
         }
