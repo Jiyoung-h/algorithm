@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-bool checkVisit(vector<bool> visit);
+bool check(vector<bool> visit);
 
 int solution(int n, vector<vector<int>> costs) {
 	int answer = 0;
