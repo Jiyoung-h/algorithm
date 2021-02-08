@@ -32,7 +32,8 @@ int solution(int n, vector<vector<int>> costs) {
 			if (visit[i] != true)
 				continue;
 			for (int j = 0; j < visit.size(); j++) {
-				if ((minCost == -1 || minCost > graphsi][j]) && visit[j] != true && graphs[i][j] != 0) {
+				// 최소비용이 아직 없거나 비용이 최소이고, 방문하지도 않았고, 
+				if ((minCost == -1 || minCost > graphs[i][j]) && visit[j] != true && graphs[i][j] != 0) {
 					minCost = graphs[i][j];
 					minNode1 = i;
 					minNode2 = j;
