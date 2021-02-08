@@ -9,8 +9,8 @@ int solution(int n, vector<vector<int>> costs) {
 	vector<vector<int>> graphs(n,vector<int>(n));
     
 	int minCost = costs[0][2];
-	int minNode1=costs[0][0];
-   	int minNode2=costs[0][1];
+	int minNode1 = costs[0][0];
+   	int minNode2 = costs[0][1];
     
 	for (int i = 0; i < costs.size(); i++) {
 		graphs[costs[i][0]][costs[i][1]] = costs[i][2];
