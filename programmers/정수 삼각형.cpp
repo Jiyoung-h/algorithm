@@ -5,13 +5,10 @@
 using namespace std;
 
 int solution(vector<vector<int>> triangle) {
-    vector<vector<int>> t(triangle);
-    for (int i = 0; i < triangle.size() - 1; i++) {
-        for (int j = 0; j < triangle[i].size(); j++) {
-            t[i + 1][j] = max(t[i][j] + triangle[i + 1][j], t[i + 1][j]);
-            t[i + 1][j + 1] = max(t[i][j] + triangle[i + 1][j + 1], t[i + 1][j + 1]);
+    for(int i=triangle.size()-2; i>=0; i--){
+        for(int j=0; j<triangle[i].size(); j++){
+            triangle[i][j] = max(triangle[i+1][j], triangle[i+1][j+1]) + triangle[i][j];
         }
     }
-    sort(t[t.size() - 1].begin(), t[t.size() - 1].end());
-    return t[t.size() - 1].back();
+    return triangle[0][0];
 }
