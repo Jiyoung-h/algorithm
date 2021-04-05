@@ -3,29 +3,29 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	int t; 
-  cin >> t;
+	int t;
+	cin >> t;
 	while (t--) {
-		multiset<int>arr;
-		int n; cin >> n;
+		multiset<int> arr;
+		int n; 
+		cin >> n;
 		for (int i = 0; i < n; i++) {
-			char a; cin >> a;
-			int x; cin >> x;
+			char a; 
+			cin >> a;
+			int x; 
+			cin >> x;
 			if (a == 'I')
 				arr.insert(x);
-
 			else {
 				if (arr.empty())
 					continue;
 				if (x == 1) {
-					auto iter = arr.end();
-					iter--;
-					arr.erase(iter);
+					auto end = arr.end();
+					end--;
+					arr.erase(end);
 				}
 				else {
-					auto iter = arr.begin();
-					arr.erase(iter);
+					arr.erase(arr.begin());
 				}
 			}
 		}
@@ -34,7 +34,7 @@ int main() {
 		else {
 			auto end = arr.end();
 			end--;
-			cout << *end << " " << *arr.begin() << "\n";
+			cout << *(end) << " " << *arr.begin() << "\n";
 		}
 	}
 	return 0;
