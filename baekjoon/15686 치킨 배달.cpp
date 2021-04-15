@@ -4,7 +4,6 @@
 #include<algorithm>
 using namespace std;
 int n, m, answer;
-vector<vector<int>> board;
 vector<pair<int, int>> store;
 vector<pair<int, int>> house;
 // 폐업시키지 않을 치킨집 count개, 치킨집 index까지, 현 치킨 거리 distance
